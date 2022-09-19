@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "lint": "eslint .*.js *.js .storybook/*.js src --max-warnings=0",
+    "lint:fix": "yarn lint --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
