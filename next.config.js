@@ -11,6 +11,7 @@ module.exports = withImages({
   images: {
     // This avoids having issues with img tag src parameter expected types
     disableStaticImages: true,
+    domains: ['images.unsplash.com'],
   },
   eslint: {
     // We don't lint during the build because GitHub actions performs its own lint step
