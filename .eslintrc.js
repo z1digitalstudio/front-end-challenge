@@ -121,7 +121,7 @@ module.exports = {
     'arrow-body-style': 'warn',
     'no-console': 'warn',
     'no-debugger': 'warn',
-    'prettier/prettier': 'warn',
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
     '@typescript-eslint/no-restricted-imports': [
       'error',
       {
