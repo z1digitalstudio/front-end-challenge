@@ -1,7 +1,8 @@
-import { PlayButton } from '$/components/PlayButton';
+import { FavIcon, PlayIcon } from '$/components/AnimatedIcon';
 import { Text } from '$/components/Text';
 import type { Song } from '$/types';
 import Image from 'next/image';
+import { useState } from 'react';
 
 import {
   SongContainer,
@@ -17,7 +18,16 @@ export function SongItem({
   image,
   genre,
 }: Song) {
-  const playSong = () => {};
+  const [isFav, setIsFav] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleToggleFav = () => {
+    setIsFav(!isFav);
+  };
+
+  const handlePlay = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <SongContainer>
@@ -35,7 +45,7 @@ export function SongItem({
           {description}
         </Text>
         <SongDetails>
-          <PlayButton onClick={playSong} />
+          <PlayIcon size="large" isChecked={isPlaying} onClick={handlePlay} />
           <Text tag="small" variant="caption">
             5 min
           </Text>
@@ -44,6 +54,7 @@ export function SongItem({
           </Text>
         </SongDetails>
       </SongInformation>
+      <FavIcon size="regular" isChecked={isFav} onClick={handleToggleFav} />
     </SongContainer>
   );
 }
