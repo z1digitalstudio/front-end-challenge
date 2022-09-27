@@ -1,3 +1,4 @@
+import { FavIcon } from '$/components/AnimatedIcon';
 import styled from 'styled-components';
 
 export const SongContainer = styled.article`
@@ -8,6 +9,10 @@ export const SongContainer = styled.article`
 export const SongDetails = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const FavIconStyled = styled(FavIcon)`
+  margin: auto 0 auto auto;
 `;
 
 export const SongInformation = styled.div`
@@ -27,8 +32,8 @@ export const SongInformation = styled.div`
 
 export const SongCover = styled.div`
   position: relative;
-  width: 9em;
-  height: 9em;
+  width: 140px;
+  height: 140px;
   & img {
     border-radius: 1em;
   }

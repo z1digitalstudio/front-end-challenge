@@ -1,12 +1,12 @@
 import HomeView from '$/containers/Views/Home';
-import { useRouter } from 'next/router';
+import { FavSongsProvider } from '$/contexts/FavSongs/FavSongs.provider';
 
 function HomePage(): JSX.Element {
-  const router = useRouter();
-  if (router.isReady) {
-    return <HomeView />;
-  }
-  return <></>;
+  return (
+    <FavSongsProvider>
+      <HomeView />
+    </FavSongsProvider>
+  );
 }
 
 export default HomePage;
