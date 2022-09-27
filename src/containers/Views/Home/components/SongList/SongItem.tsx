@@ -1,10 +1,11 @@
-import { FavIcon, PlayIcon } from '$/components/AnimatedIcon';
+import { PlayIcon } from '$/components/AnimatedIcon';
 import { Text } from '$/components/Text';
 import type { Song } from '$/types';
 import Image from 'next/image';
 import { useState } from 'react';
 
 import {
+  FavIconStyled,
   SongContainer,
   SongCover,
   SongDetails,
@@ -54,7 +55,11 @@ export function SongItem({
           </Text>
         </SongDetails>
       </SongInformation>
-      <FavIcon size="medium" isChecked={isFav} onClick={handleToggleFav} />
+      <FavIconStyled
+        size="medium"
+        isChecked={isFav}
+        onClick={handleToggleFav}
+      />
     </SongContainer>
   );
 }

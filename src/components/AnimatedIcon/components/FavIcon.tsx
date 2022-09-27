@@ -54,12 +54,5 @@ export const FavIcon: React.FunctionComponent<TAnimatedIconProps> = ({
     onClick(e);
   };
 
-  return (
-    <AnimationComponent
-      {...rest}
-      onClick={handleToggle}
-      $size={size}
-      className="fav-icon"
-    />
-  );
+  return <AnimationComponent {...rest} onClick={handleToggle} $size={size} />;
 };
