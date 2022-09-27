@@ -11,7 +11,8 @@ type THandleAnimation = (
 
 const initAnimation: THandleAnimation = (lottieAnimation, isChecked) => {
   if (lottieAnimation && isChecked) {
-    lottieAnimation.goToAndPlay(60, true);
+    const totalFrames = lottieAnimation.totalFrames;
+    lottieAnimation.goToAndStop(totalFrames, true);
   }
 };
 
