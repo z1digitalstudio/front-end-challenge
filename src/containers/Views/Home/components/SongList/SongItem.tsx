@@ -1,5 +1,6 @@
 import { PlayIcon } from '$/components/AnimatedIcon';
 import { Text } from '$/components/Text';
+import { useFavSongs } from '$/contexts/FavSongs/useFavSongs';
 import type { Song } from '$/types';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -13,18 +14,16 @@ import {
 } from './styles';
 
 export function SongItem({
+  id,
   name,
   description,
   author: { name: authorName },
   image,
   genre,
 }: Song) {
-  const [isFav, setIsFav] = useState(false);
+  // const { isFav, toggleFav } = useFavoriteList();
+  const { isFav, toggleFav } = useFavSongs();
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const handleToggleFav = () => {
-    setIsFav(!isFav);
-  };
 
   const handlePlay = () => {
     setIsPlaying(!isPlaying);
@@ -57,8 +56,8 @@ export function SongItem({
       </SongInformation>
       <FavIconStyled
         size="medium"
-        isChecked={isFav}
-        onClick={handleToggleFav}
+        isChecked={isFav(id)}
+        onClick={() => toggleFav(id)}
       />
     </SongContainer>
   );
