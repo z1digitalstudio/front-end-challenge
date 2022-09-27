@@ -20,4 +20,9 @@ export interface IUseAnimationProps
   speed?: number;
 }
 
+export type THandleAnimation = (
+  lottieAnimation: TAnimationInstance,
+  isChecked: boolean,
+) => void;
+
 export type TAnimationInstance = AnimationItem | null;

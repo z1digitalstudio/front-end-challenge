@@ -1,27 +1,9 @@
 import { useEffect, useRef } from 'react';
 
+import { initAnimation, toggleAnimation } from './../helpers';
 import ANIMATION_DATA from './../icons/fav.json';
-import type { TAnimatedIconProps, TAnimationInstance } from './../types';
+import type { TAnimatedIconProps } from './../types';
 import { useAnimation } from './../useAnimation';
-
-type THandleAnimation = (
-  lottieAnimation: TAnimationInstance,
-  isChecked: boolean,
-) => void;
-
-const initAnimation: THandleAnimation = (lottieAnimation, isChecked) => {
-  if (lottieAnimation && isChecked) {
-    const totalFrames = lottieAnimation.totalFrames;
-    lottieAnimation.goToAndStop(totalFrames, true);
-  }
-};
-
-const toggleAnimation: THandleAnimation = (lottieAnimation, isChecked) => {
-  if (lottieAnimation) {
-    lottieAnimation.setDirection(isChecked ? 1 : -1);
-    lottieAnimation.play();
-  }
-};
 
 const rendererSettings = {
   viewBoxSize: '0 0 1500 1500',
