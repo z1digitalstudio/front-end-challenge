@@ -22,8 +22,12 @@ const toggleAnimation: THandleAnimation = (lottieAnimation, isChecked) => {
   }
 };
 
+const rendererSettings = {
+  viewBoxSize: '0 0 1500 1500',
+};
+
 export const FavIcon: React.FunctionComponent<TAnimatedIconProps> = ({
-  size = 'regular',
+  size,
   isChecked = false,
   onClick = () => {},
   ...rest
@@ -31,9 +35,10 @@ export const FavIcon: React.FunctionComponent<TAnimatedIconProps> = ({
   const initialized = useRef(false);
 
   const [AnimationComponent, lottieAnimation] = useAnimation({
-    speed: 3,
+    speed: 2,
     autoplay: false,
     animationData: ANIMATION_DATA,
+    rendererSettings,
   });
 
   useEffect(() => {

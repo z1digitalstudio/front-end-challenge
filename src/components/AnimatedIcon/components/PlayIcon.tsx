@@ -22,8 +22,12 @@ const toggleAnimation: THandleAnimation = (lottieAnimation, isChecked) => {
   }
 };
 
+const rendererSettings = {
+  viewBoxSize: '310 300 380 400',
+};
+
 export const PlayIcon: React.FunctionComponent<TAnimatedIconProps> = ({
-  size = 'regular',
+  size,
   isChecked = false,
   onClick = () => {},
   ...rest
@@ -34,6 +38,7 @@ export const PlayIcon: React.FunctionComponent<TAnimatedIconProps> = ({
     speed: 3,
     autoplay: false,
     animationData: ANIMATION_DATA,
+    rendererSettings,
   });
 
   useEffect(() => {

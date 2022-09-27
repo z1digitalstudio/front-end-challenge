@@ -45,7 +45,7 @@ export function SongItem({
           {description}
         </Text>
         <SongDetails>
-          <PlayIcon size="large" isChecked={isPlaying} onClick={handlePlay} />
+          <PlayIcon size="medium" isChecked={isPlaying} onClick={handlePlay} />
           <Text tag="small" variant="caption">
             5 min
           </Text>
@@ -54,7 +54,7 @@ export function SongItem({
           </Text>
         </SongDetails>
       </SongInformation>
-      <FavIcon size="regular" isChecked={isFav} onClick={handleToggleFav} />
+      <FavIcon size="medium" isChecked={isFav} onClick={handleToggleFav} />
     </SongContainer>
   );
 }

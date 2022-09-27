@@ -20,6 +20,7 @@ export const useAnimation = ({
   loop = false,
   autoplay = false,
   animationData,
+  rendererSettings,
 }: IUseAnimationProps): [
   FunctionComponent<IAnimationWrapper>,
   TAnimationInstance,
@@ -37,11 +38,14 @@ export const useAnimation = ({
         loop,
         autoplay,
         animationData,
+        rendererSettings: {
+          ...rendererSettings,
+        },
       });
       lottieAnimationItem.setSpeed(speed);
       return lottieAnimationItem;
     },
-    [renderer, loop, autoplay, speed, animationData],
+    [renderer, loop, autoplay, speed, animationData, rendererSettings],
   );
 
   useEffect(() => {

@@ -4,5 +4,5 @@ import styled from 'styled-components';
 import type { IAnimationWrapper } from './types';
 
 export const AnimationWrapper = styled.div<IAnimationWrapper>`
-  ${({ $size }) => iconSizes[$size]}
+  ${({ $size = 'medium' }) => iconSizes[$size]};
 `;

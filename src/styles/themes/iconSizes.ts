@@ -1,11 +1,11 @@
 import { css } from 'styled-components';
 
 export const iconSizes = {
-  medium: css`
+  small: css`
     height: 25px;
     width: 25px;
   `,
-  regular: css`
+  medium: css`
     height: 32px;
     width: 32px;
   `,

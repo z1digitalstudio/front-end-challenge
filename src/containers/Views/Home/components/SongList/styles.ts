@@ -27,8 +27,8 @@ export const SongInformation = styled.div`
 
 export const SongCover = styled.div`
   position: relative;
-  width: 9em;
-  height: 9em;
+  width: 140px;
+  height: 140px;
   & img {
     border-radius: 1em;
   }

@@ -5,7 +5,7 @@ import React from 'react';
 export type TIconSizes = keyof typeof iconSizes;
 
 export interface IAnimationWrapper extends React.ComponentPropsWithRef<'div'> {
-  $size: TIconSizes;
+  $size?: TIconSizes;
 }
 
 export type TAnimatedIconProps = {
