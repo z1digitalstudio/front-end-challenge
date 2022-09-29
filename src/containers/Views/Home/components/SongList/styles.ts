@@ -9,6 +9,10 @@ export const SongContainer = styled.article`
 export const SongDetails = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  & > * {
+    margin-right: 1em;
+  }
 `;
 
 export const FavIconStyled = styled(FavIcon)`

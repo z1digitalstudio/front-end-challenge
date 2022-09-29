@@ -1,4 +1,5 @@
 import { PlayIcon } from '$/components/AnimatedIcon';
+import { Pill } from '$/components/Pills';
 import { Text } from '$/components/Text';
 import { useFavSongs } from '$/contexts/FavSongs/useFavSongs';
 import type { Song } from '$/types';
@@ -49,9 +50,7 @@ export function SongItem({
           <Text tag="small" variant="caption">
             5 min
           </Text>
-          <Text tag="small" variant="caption">
-            {genre}
-          </Text>
+          <Pill text={genre} />
         </SongDetails>
       </SongInformation>
       <FavIconStyled
