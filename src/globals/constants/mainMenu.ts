@@ -18,4 +18,10 @@ export const MAIN_MENU_LINKS = {
     icon: SearchLine,
     iconActive: SearchFill,
   },
+  other: {
+    href: PATHS.OTHER,
+    title: 'Other',
+    icon: SearchLine,
+    iconActive: SearchFill,
+  },
 };
