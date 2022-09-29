@@ -10275,6 +10275,18 @@ telejson@^6.0.8:
     lodash "^4.17.21"
     memoizerific "^1.11.3"
 
+temporal-polyfill@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/temporal-polyfill/-/temporal-polyfill-0.0.8.tgz#1dce2e7f2a04845cc40ced158a38f4e904577bd6"
+  integrity sha512-IuA8GhS1PRC04H/zVNAIxJvCZQum6V5HjqFj7gz1a3SMUf/Kf1xIXILNYtxrWYnGqIU/RrDRxlCKCm/vmqnBvw==
+  dependencies:
+    temporal-spec "0.0.3"
+
+temporal-spec@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/temporal-spec/-/temporal-spec-0.0.3.tgz#570391455fc3304c41550ed831a9b3cc4cb09f75"
+  integrity sha512-gJu7QRqn5c2vTSkYWGC4qz1i+FZ9C+Cz16UIBMRcjgXOsHfXeSIgaWUKeq/2rz1iNfFxvmF/ywqbfC6ggTpjkA==
+
 terser-webpack-plugin@^1.4.3:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz#a217aefaea330e734ffacb6120ec1fa312d6040b"

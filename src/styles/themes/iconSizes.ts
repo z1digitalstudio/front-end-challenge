@@ -10,7 +10,7 @@ export const iconSizes = {
     width: 32px;
   `,
   large: css`
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
   `,
 };
