@@ -21,11 +21,5 @@ export function SongList({ error, loading, songs }: Props) {
     return <p>No songs found</p>;
   }
 
-  return (
-    <>
-      {songs.map((song: Song) => (
-        <SongItem {...song} key={song.id} />
-      ))}
-    </>
-  );
+  return songs.map((song: Song) => <SongItem {...song} key={song.id} />);
 }
