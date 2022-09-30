@@ -5,8 +5,8 @@ import { RangeInput } from '$/components/RangeInput';
 import { SongCover } from '$/components/SongCover';
 import { Text } from '$/components/Text';
 import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
+import { formatSecondsToMinSec } from '$/utils/timeParsers';
 import React, { useEffect, useRef, useState } from 'react';
-import { Temporal } from 'temporal-polyfill';
 
 import {
   PlayerContainer,
@@ -17,14 +17,6 @@ import {
   SongDeails,
   SongInformation,
 } from './styles';
-
-function formatDuration(duration: number): string {
-  let temp = Temporal.Duration.from({ seconds: duration });
-  temp = temp.round({ largestUnit: 'minutes' });
-  const minutes = temp.minutes < 10 ? `0${temp.minutes}` : temp.minutes;
-  const seconds = temp.seconds < 10 ? `0${temp.seconds}` : temp.seconds;
-  return `${minutes}:${seconds}`;
-}
 
 function playOrStopAudio(audioRef: HTMLAudioElement, isPlaying: boolean): void {
   if (isPlaying) {
@@ -115,7 +107,7 @@ export const SongPlayer = (): JSX.Element | null => {
         </PlayerControls>
         <ProgressTime>
           <ProgressTimeText variant="caption" tag="small">
-            {formatDuration(currentTime)}
+            {formatSecondsToMinSec(currentTime)}
           </ProgressTimeText>
           <RangeInput
             value={currentTime}
@@ -125,7 +117,7 @@ export const SongPlayer = (): JSX.Element | null => {
             onEnded={() => setIsPlaying(false)}
           />
           <ProgressTimeText variant="caption" tag="small">
-            {formatDuration(durationTime)}
+            {formatSecondsToMinSec(durationTime)}
           </ProgressTimeText>
         </ProgressTime>
       </PlayerContainer>
