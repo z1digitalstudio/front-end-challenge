@@ -2,9 +2,9 @@ import NextTrack from '$/assets/icons/next-track.svg';
 import PrevTrack from '$/assets/icons/prev-track.svg';
 import { PlayIcon } from '$/components/AnimatedIcon';
 import { RangeInput } from '$/components/RangeInput';
+import { SongCover } from '$/components/SongCover';
 import { Text } from '$/components/Text';
 import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 
@@ -14,7 +14,6 @@ import {
   PlayerPositioner,
   ProgressTime,
   ProgressTimeText,
-  SongCover,
   SongDeails,
   SongInformation,
 } from './styles';
@@ -95,9 +94,7 @@ export const SongPlayer = (): JSX.Element | null => {
       />
       <PlayerContainer>
         <SongInformation>
-          <SongCover>
-            <Image src={image} layout="fill" alt={`cover-of-${name}`} />
-          </SongCover>
+          <SongCover src={image} alt={`cover-of-${name}`} size="small" />
           <SongDeails>
             <Text variant="body2" tag="p">
               {name}

@@ -43,16 +43,6 @@ export const SongDeails = styled.div`
   }
 `;
 
-export const SongCover = styled.div`
-  position: relative;
-  width: 48px;
-  height: 48px;
-
-  & img {
-    border-radius: 12px;
-  }
-`;
-
 export const ProgressTime = styled.div`
   display: flex;
   justify-content: center;

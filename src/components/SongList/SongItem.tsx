@@ -1,15 +1,14 @@
 import { PlayIcon } from '$/components/AnimatedIcon';
 import { Pill } from '$/components/Pills';
 import { Text } from '$/components/Text';
+import { SongCover } from '$/components/SongCover';
 import { useFavSongs } from '$/contexts/FavSongs/useFavSongs';
 import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
 import type { Song } from '$/types';
-import Image from 'next/image';
 
 import {
   FavIconStyled,
   SongContainer,
-  SongCover,
   SongDetails,
   SongInformation,
 } from './styles';
@@ -37,9 +36,12 @@ export function SongItem(song: Song) {
 
   return (
     <SongContainer>
-      <SongCover>
-        <Image src={image} layout="fill" alt={`cover-of-${name}`} />
-      </SongCover>
+      <SongCover
+        src={image}
+        layout="fill"
+        alt={`cover-of-${name}`}
+        size="medium"
+      />
       <SongInformation>
         <Text tag="h3" variant="bodyBold">
           {name}

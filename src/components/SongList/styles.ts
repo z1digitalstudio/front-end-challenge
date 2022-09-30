@@ -33,12 +33,3 @@ export const SongInformation = styled.div`
     word-break: break-word;
   }
 `;
-
-export const SongCover = styled.div`
-  position: relative;
-  width: 140px;
-  height: 140px;
-  & img {
-    border-radius: 1em;
-  }
-`;
