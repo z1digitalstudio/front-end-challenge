@@ -60,12 +60,20 @@ export const ProgressTime = styled.div`
 
   & > input {
     flex: 1;
-    margin-left: 0.75em;
-    margin-right: 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 `;
 
 export const ProgressTimeText = styled(Text)`
+  width: 3em;
   padding-bottom: 8px;
   color: ${({ theme }) => theme.color.white};
+
+  &:first-child {
+    text-align: right;
+  }
+  &:last-child {
+    text-align: left;
+  }
 `;

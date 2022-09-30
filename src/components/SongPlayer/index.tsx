@@ -1,6 +1,7 @@
 import NextTrack from '$/assets/icons/next-track.svg';
 import PrevTrack from '$/assets/icons/prev-track.svg';
 import { PlayIcon } from '$/components/AnimatedIcon';
+import { RangeInput } from '$/components/RangeInput';
 import { Text } from '$/components/Text';
 import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
 import Image from 'next/image';
@@ -37,8 +38,9 @@ function playOrStopAudio(audioRef: HTMLAudioElement, isPlaying: boolean): void {
 // TODO: extract null render and pass props from useMusicPlayer. Not use hook inside component
 // TODO: extract login in a hook
 
-export const SongPlayer = () => {
+export const SongPlayer = (): JSX.Element | null => {
   const { isPlaying, selectedSong, setIsPlaying } = useMusicPlayer();
+
   const audioRef = useRef<HTMLAudioElement>(null);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [durationTime, setDurationTime] = useState<number>(0);
@@ -118,10 +120,9 @@ export const SongPlayer = () => {
           <ProgressTimeText variant="caption" tag="small">
             {formatDuration(currentTime)}
           </ProgressTimeText>
-          <input
-            type="range"
-            defaultValue="0"
+          <RangeInput
             value={currentTime}
+            min={0}
             max={durationTime}
             onChange={handleChangeAudioTime}
             onEnded={() => setIsPlaying(false)}
