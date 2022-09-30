@@ -4,10 +4,8 @@ import { StyledMenuItemLinkProps, StyledMenuItemProps } from './types';
 
 export const Container = styled.aside`
   position: relative;
-
   width: 15rem;
-  height: 100vh;
-
+  height: 100%;
   background-color: ${({ theme }) => theme.color.grayscale50};
 `;
 

@@ -1,6 +1,8 @@
 import '$/styles/fonts.css';
 import { ApolloInstance } from '$/ApolloInstance';
+import { SongPlayer } from '$/components/SongPlayer';
 import { Layout } from '$/containers/Layouts';
+import { MusicPlayerProvider } from '$/contexts/MusicPlayer/MusicPlayer.provider';
 import GlobalStyle from '$/styles/global';
 import theme from '$/styles/themes';
 import { ApolloProvider } from '@apollo/client';
@@ -13,7 +15,10 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       <ApolloProvider client={ApolloInstance}>
         <GlobalStyle />
         <Layout>
-          <Component {...pageProps} />
+          <MusicPlayerProvider>
+            <Component {...pageProps} />
+            <SongPlayer />
+          </MusicPlayerProvider>
         </Layout>
       </ApolloProvider>
     </ThemeProvider>

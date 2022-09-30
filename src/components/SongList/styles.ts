@@ -1,4 +1,5 @@
 import { FavIcon } from '$/components/AnimatedIcon';
+import { Text } from '$/components/Text';
 import styled from 'styled-components';
 
 export const SongContainer = styled.article`
@@ -9,6 +10,14 @@ export const SongContainer = styled.article`
 export const SongDetails = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  & > * {
+    margin-right: 1em;
+  }
+`;
+
+export const DurationTimer = styled(Text)`
+  padding-bottom: 8px;
 `;
 
 export const FavIconStyled = styled(FavIcon)`
@@ -27,14 +36,5 @@ export const SongInformation = styled.div`
     overflow: hidden;
     height: 3.5em;
     word-break: break-word;
-  }
-`;
-
-export const SongCover = styled.div`
-  position: relative;
-  width: 140px;
-  height: 140px;
-  & img {
-    border-radius: 1em;
   }
 `;
