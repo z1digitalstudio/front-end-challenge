@@ -1,10 +1,10 @@
+import { SongList } from '$/components/SongList';
 import { Text } from '$/components/Text';
 import { GET_SONGS } from '$/queries';
 import { Song } from '$/types';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
-import { SongList } from './components/SongList';
 import { Container, ListSectionTitle, SearchInput } from './styles';
 
 type Query = {
