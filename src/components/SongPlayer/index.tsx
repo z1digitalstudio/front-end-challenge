@@ -88,10 +88,10 @@ export const SongPlayer = (): JSX.Element | null => {
         <SongInformation>
           <SongCover src={image} alt={`cover-of-${name}`} size="small" />
           <SongDeails>
-            <Text variant="body2" tag="p">
+            <Text variant="body2" tag="p" color="white">
               {name}
             </Text>
-            <Text variant="caption" tag="small">
+            <Text variant="caption" tag="small" color="grayscale200">
               {authorName}
             </Text>
           </SongDeails>
@@ -106,7 +106,7 @@ export const SongPlayer = (): JSX.Element | null => {
           <NextTrack />
         </PlayerControls>
         <ProgressTime>
-          <ProgressTimeText variant="caption" tag="small">
+          <ProgressTimeText variant="caption" tag="small" color="white">
             {formatSecondsToMinSec(currentTime)}
           </ProgressTimeText>
           <RangeInput
@@ -116,7 +116,7 @@ export const SongPlayer = (): JSX.Element | null => {
             onChange={handleChangeAudioTime}
             onEnded={() => setIsPlaying(false)}
           />
-          <ProgressTimeText variant="caption" tag="small">
+          <ProgressTimeText variant="caption" tag="small" color="white">
             {formatSecondsToMinSec(durationTime)}
           </ProgressTimeText>
         </ProgressTime>

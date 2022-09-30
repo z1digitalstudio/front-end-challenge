@@ -9,7 +9,6 @@ import { formatSecondsToMinSec } from '$/utils/timeParsers';
 import { useEffect, useState } from 'react';
 
 import {
-  DurationTimer,
   FavIconStyled,
   SongContainer,
   SongDetails,
@@ -68,9 +67,9 @@ export function SongItem(song: Song) {
             isChecked={isSelectedAndPlaying}
             onClick={handlePlay}
           />
-          <DurationTimer tag="small" variant="caption">
+          <Text tag="small" variant="caption">
             {formatSecondsToMinSec(duration)}
-          </DurationTimer>
+          </Text>
           <Pill text={genre} />
         </SongDetails>
       </SongInformation>
