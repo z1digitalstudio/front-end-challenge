@@ -8,6 +8,11 @@ module.exports = withImages({
     svgLoader(config, '/_next');
     return config;
   },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
   images: {
     // This avoids having issues with img tag src parameter expected types
     disableStaticImages: true,
