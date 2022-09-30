@@ -81,7 +81,7 @@ export const SongPlayer = (): JSX.Element | null => {
         ref={audioRef}
         src={url}
         onEnded={() => setIsPlaying(false)}
-        onLoadedData={handleMetadata}
+        onLoadedMetadata={handleMetadata}
         onTimeUpdate={handleUpdateCurrentTime}
       />
       <PlayerContainer>

@@ -1,4 +1,5 @@
 import { FavIcon } from '$/components/AnimatedIcon';
+import { Text } from '$/components/Text';
 import styled from 'styled-components';
 
 export const SongContainer = styled.article`
@@ -13,6 +14,10 @@ export const SongDetails = styled.div`
   & > * {
     margin-right: 1em;
   }
+`;
+
+export const DurationTimer = styled(Text)`
+  padding-bottom: 8px;
 `;
 
 export const FavIconStyled = styled(FavIcon)`

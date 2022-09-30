@@ -1,12 +1,15 @@
 import { PlayIcon } from '$/components/AnimatedIcon';
 import { Pill } from '$/components/Pills';
-import { Text } from '$/components/Text';
 import { SongCover } from '$/components/SongCover';
+import { Text } from '$/components/Text';
 import { useFavSongs } from '$/contexts/FavSongs/useFavSongs';
 import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
 import type { Song } from '$/types';
+import { formatSecondsToMinSec } from '$/utils/timeParsers';
+import { useEffect, useState } from 'react';
 
 import {
+  DurationTimer,
   FavIconStyled,
   SongContainer,
   SongDetails,
@@ -14,6 +17,7 @@ import {
 } from './styles';
 
 export function SongItem(song: Song) {
+  const [duration, setDuration] = useState<number>(0);
   const { isFav, toggleFav } = useFavSongs();
   const { isPlaying, selectedSong, setSelectedSong, setIsPlaying } =
     useMusicPlayer();
@@ -21,6 +25,7 @@ export function SongItem(song: Song) {
   const {
     id,
     name,
+    audio: { url },
     description,
     author: { name: authorName },
     image,
@@ -28,6 +33,11 @@ export function SongItem(song: Song) {
   } = song;
 
   const isSelectedAndPlaying = selectedSong?.id === song.id && isPlaying;
+
+  useEffect(() => {
+    const audio = new Audio(url);
+    audio.onloadedmetadata = () => setDuration(Math.floor(audio.duration));
+  }, [url]);
 
   const handlePlay = () => {
     setSelectedSong(song);
@@ -58,9 +68,9 @@ export function SongItem(song: Song) {
             isChecked={isSelectedAndPlaying}
             onClick={handlePlay}
           />
-          <Text tag="small" variant="caption">
-            5 min
-          </Text>
+          <DurationTimer tag="small" variant="caption">
+            {formatSecondsToMinSec(duration)}
+          </DurationTimer>
           <Pill text={genre} />
         </SongDetails>
       </SongInformation>
