@@ -7,15 +7,19 @@ export type TMusicStorageProvider = React.FunctionComponent<{
 
 export type TSelectedSong = Song | null;
 export type TStoredSongs = Song[];
+export type TSetSelectedSong = (selectedSong: TSelectedSong) => void;
+export type TSetIsPlaying = (bool: boolean) => void;
+export type THandleSearch = (newSearchValue: string) => void;
+
 export type IMusicStorageContext = {
-  selectedSong: TSelectedSong;
-  setSelectedSong: (selectedSong: TSelectedSong) => void;
-  isPlaying: boolean;
-  setIsPlaying: (bool: boolean) => void;
   storedSongs: TStoredSongs;
-  setStoredSongs: (songs: Song[]) => void;
-  handleSearch: (newSearchValue: string) => void;
+  selectedSong: TSelectedSong;
+  isPlaying: boolean;
   searchValue: string;
+  setStoredSongs: (songs: Song[]) => void;
+  setSelectedSong: TSetSelectedSong;
+  setIsPlaying: TSetIsPlaying;
+  handleSearch: THandleSearch;
 };
 
 export interface IUseMusicStorageReturn
