@@ -44,6 +44,10 @@ export default class AppDocument extends Document {
     <Html lang="es">
       <Head>
         <title>Z1 music player</title>
+        <meta
+          name="description"
+          content="This is the standalone Z1 music player"
+        />
         <link rel="short cut icon" href="/favicon.ico" />
         <link
           rel="preload"

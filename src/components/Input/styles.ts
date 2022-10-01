@@ -37,7 +37,6 @@ export const Component = styled.input`
 
 export const Container = styled.div<{ $disabled: boolean }>`
   display: block;
-  min-width: 20rem;
   margin: 0;
 
   opacity: ${({ $disabled }) => ($disabled ? 0.3 : 1)};

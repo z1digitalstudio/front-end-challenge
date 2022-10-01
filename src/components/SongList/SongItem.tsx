@@ -11,9 +11,9 @@ import { useEffect, useState } from 'react';
 import {
   SongBody,
   SongContainer,
+  SongCover,
   SongDescription,
   SongDetails,
-  SongImage,
   SongInformation,
 } from './styles';
 
@@ -45,14 +45,10 @@ export function SongItem(song: Song) {
     setIsPlaying(!isSelectedAndPlaying);
   };
 
+  const isFavSong = isFav(id);
   return (
     <SongContainer>
-      <SongImage
-        src={image}
-        layout="fill"
-        aria-label={`cover-of-${name}`}
-        size="medium"
-      />
+      <SongCover songName={name} src={image} size="medium" />
       <SongBody>
         <SongInformation>
           <Text tag="h3" variant="bodyBold">
@@ -65,7 +61,10 @@ export function SongItem(song: Song) {
             {description}
           </SongDescription>
           <SongDetails>
-            <Button onClick={handlePlay}>
+            <Button
+              aria-label={isPlaying ? 'pause song' : 'play song'}
+              onClick={handlePlay}
+            >
               <PlayIcon size="medium" isChecked={isSelectedAndPlaying} />
             </Button>
             <Text tag="small" variant="caption">
@@ -74,8 +73,13 @@ export function SongItem(song: Song) {
             <Pill text={genre} />
           </SongDetails>
         </SongInformation>
-        <Button onClick={() => toggleFav(id)}>
-          <FavIcon size="medium" isChecked={isFav(id)} />
+        <Button
+          aria-label={
+            isFavSong ? 'remove from favorite songs' : 'add to favorite songs'
+          }
+          onClick={() => toggleFav(id)}
+        >
+          <FavIcon size="medium" isChecked={isFavSong} />
         </Button>
       </SongBody>
     </SongContainer>

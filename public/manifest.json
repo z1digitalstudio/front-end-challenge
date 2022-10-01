@@ -1,0 +1,51 @@
+{
+  "name": "Z1 music player",
+  "short_name": "Z1 music player",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#22223D",
+  "theme_color": "#22223D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/z1-badge.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

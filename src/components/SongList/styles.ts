@@ -1,4 +1,4 @@
-import { SongCover } from '$/components/SongCover';
+import { SongCover as DefaultSongCover } from '$/components/SongCover';
 import { Text } from '$/components/Text';
 import { from } from '$/styles/utils/responsive';
 import styled from 'styled-components';
@@ -68,7 +68,7 @@ export const SongDescription = styled(Text)`
   }
 `;
 
-export const SongImage = styled(SongCover)`
+export const SongCover = styled(DefaultSongCover)`
   margin-bottom: 0.35rem;
   margin-right: 1rem;
 `;

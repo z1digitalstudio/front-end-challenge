@@ -1,4 +1,3 @@
-import badge from '$/assets/z1-badge.png';
 import { Separator } from '$/components/Separator';
 import { Text } from '$/components/Text';
 import { MAIN_MENU_LINKS } from '$/globals/constants/mainMenu';
@@ -24,7 +23,7 @@ export const SideMenu = ({ className }: SideMenuProps) => {
   return (
     <Container className={className}>
       <UserInfoContainer>
-        <Thumbnail src={badge} alt="Z1 Digital Studio" />
+        <Thumbnail src="/z1-badge.png" alt="Z1 Digital Studio" />
         <UserInfo>
           <Text tag="p" variant="captionBold">
             Z1 Digital Studio

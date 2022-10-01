@@ -10,5 +10,6 @@ export interface ISongCoverStyled extends React.ComponentPropsWithRef<'div'> {
 }
 
 export interface ISongCover extends ImageProps {
+  songName: string;
   size?: TIconSizes;
 }

@@ -87,7 +87,7 @@ export const SongPlayer = (): JSX.Element | null => {
       />
       <PlayerContainer>
         <SongInformation>
-          <SongCover src={image} alt={`cover-of-${name}`} size="small" />
+          <SongCover src={image} size="small" songName={name} />
           <SongDeails>
             <Text variant="body2" tag="p" color="white">
               {name}
@@ -98,13 +98,16 @@ export const SongPlayer = (): JSX.Element | null => {
           </SongDeails>
         </SongInformation>
         <PlayerControls>
-          <Button>
+          <Button aria-label="previous song">
             <PrevTrack />
           </Button>
-          <Button onClick={() => setIsPlaying(!isPlaying)}>
+          <Button
+            aria-label={isPlaying ? 'pause song' : 'play song'}
+            onClick={() => setIsPlaying(!isPlaying)}
+          >
             <PlayIcon size="large" isChecked={isPlaying} />
           </Button>
-          <Button>
+          <Button aria-label="next song">
             <NextTrack />
           </Button>
         </PlayerControls>
