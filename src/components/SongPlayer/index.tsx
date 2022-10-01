@@ -1,6 +1,7 @@
 import NextTrack from '$/assets/icons/next-track.svg';
 import PrevTrack from '$/assets/icons/prev-track.svg';
 import { PlayIcon } from '$/components/AnimatedIcon';
+import { Button } from '$/components/Button';
 import { RangeInput } from '$/components/RangeInput';
 import { SongCover } from '$/components/SongCover';
 import { Text } from '$/components/Text';
@@ -97,13 +98,15 @@ export const SongPlayer = (): JSX.Element | null => {
           </SongDeails>
         </SongInformation>
         <PlayerControls>
-          <PrevTrack />
-          <PlayIcon
-            size="large"
-            isChecked={isPlaying}
-            onClick={() => setIsPlaying(!isPlaying)}
-          />
-          <NextTrack />
+          <Button>
+            <PrevTrack />
+          </Button>
+          <Button onClick={() => setIsPlaying(!isPlaying)}>
+            <PlayIcon size="large" isChecked={isPlaying} />
+          </Button>
+          <Button>
+            <NextTrack />
+          </Button>
         </PlayerControls>
         <ProgressTime>
           <ProgressTimeText variant="caption" tag="small" color="white">

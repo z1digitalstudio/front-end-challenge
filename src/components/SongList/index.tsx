@@ -1,6 +1,7 @@
 import type { Song } from '$/types';
 
 import { SongItem } from './SongItem';
+import { SongListContainer } from './styles';
 
 type Props = {
   error: unknown;
@@ -8,7 +9,7 @@ type Props = {
   songs: Song[] | undefined;
 };
 
-export function SongList({ error, loading, songs }: Props) {
+export function SongList({ error, loading, songs }: Props): JSX.Element {
   if (error) {
     return <p>An unexpected error has occurred</p>;
   }
@@ -22,10 +23,10 @@ export function SongList({ error, loading, songs }: Props) {
   }
 
   return (
-    <>
+    <SongListContainer>
       {songs.map((song: Song) => (
         <SongItem {...song} key={song.id} />
       ))}
-    </>
+    </SongListContainer>
   );
 }

@@ -5,7 +5,7 @@ export const PillContainer = styled.span`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 6px 8px;
+  padding: 4px 8px;
   background-color: ${({ theme }) => theme.color.malibu100};
   color: ${({ theme }) => theme.color.grayscale900};
   border-radius: 47px;

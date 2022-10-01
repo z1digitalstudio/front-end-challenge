@@ -11,16 +11,18 @@ import { ThemeProvider } from 'styled-components';
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ThemeProvider theme={theme}>
-      <ApolloProvider client={ApolloInstance}>
-        <GlobalStyle />
-        <Layout>
+    <>
+      <ThemeProvider theme={theme}>
+        <ApolloProvider client={ApolloInstance}>
+          <GlobalStyle />
           <MusicPlayerProvider>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
             <SongPlayer />
           </MusicPlayerProvider>
-        </Layout>
-      </ApolloProvider>
-    </ThemeProvider>
+        </ApolloProvider>
+      </ThemeProvider>
+    </>
   );
 }

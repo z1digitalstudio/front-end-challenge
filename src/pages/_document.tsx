@@ -41,9 +41,10 @@ export default class AppDocument extends Document {
   }
 
   render = (): JSX.Element => (
-    <Html lang="en">
+    <Html lang="es">
       <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>Z1 music player</title>
+        <link rel="short cut icon" href="/favicon.ico" />
         <link
           rel="preload"
           href="/fonts/Jakarta/PlusJakartaSans-Regular.woff2"

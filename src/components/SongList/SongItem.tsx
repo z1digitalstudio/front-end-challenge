@@ -1,6 +1,6 @@
-import { PlayIcon } from '$/components/AnimatedIcon';
+import { FavIcon, PlayIcon } from '$/components/AnimatedIcon';
+import { Button } from '$/components/Button';
 import { Pill } from '$/components/Pills';
-import { SongCover } from '$/components/SongCover';
 import { Text } from '$/components/Text';
 import { useFavSongs } from '$/contexts/FavSongs/useFavSongs';
 import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
@@ -9,9 +9,11 @@ import { formatSecondsToMinSec } from '$/utils/timeParsers';
 import { useEffect, useState } from 'react';
 
 import {
-  FavIconStyled,
+  SongBody,
   SongContainer,
+  SongDescription,
   SongDetails,
+  SongImage,
   SongInformation,
 } from './styles';
 
@@ -45,39 +47,37 @@ export function SongItem(song: Song) {
 
   return (
     <SongContainer>
-      <SongCover
+      <SongImage
         src={image}
         layout="fill"
-        alt={`cover-of-${name}`}
+        aria-label={`cover-of-${name}`}
         size="medium"
       />
-      <SongInformation>
-        <Text tag="h3" variant="bodyBold">
-          {name}
-        </Text>
-        <Text tag="h4" variant="body">
-          {authorName}
-        </Text>
-        <Text tag="p" variant="body2" className="description">
-          {description}
-        </Text>
-        <SongDetails>
-          <PlayIcon
-            size="medium"
-            isChecked={isSelectedAndPlaying}
-            onClick={handlePlay}
-          />
-          <Text tag="small" variant="caption">
-            {formatSecondsToMinSec(duration)}
+      <SongBody>
+        <SongInformation>
+          <Text tag="h3" variant="bodyBold">
+            {name}
           </Text>
-          <Pill text={genre} />
-        </SongDetails>
-      </SongInformation>
-      <FavIconStyled
-        size="medium"
-        isChecked={isFav(id)}
-        onClick={() => toggleFav(id)}
-      />
+          <Text tag="h4" variant="body">
+            {authorName}
+          </Text>
+          <SongDescription tag="p" variant="body2" className="description">
+            {description}
+          </SongDescription>
+          <SongDetails>
+            <Button onClick={handlePlay}>
+              <PlayIcon size="medium" isChecked={isSelectedAndPlaying} />
+            </Button>
+            <Text tag="small" variant="caption">
+              {formatSecondsToMinSec(duration)}
+            </Text>
+            <Pill text={genre} />
+          </SongDetails>
+        </SongInformation>
+        <Button onClick={() => toggleFav(id)}>
+          <FavIcon size="medium" isChecked={isFav(id)} />
+        </Button>
+      </SongBody>
     </SongContainer>
   );
 }

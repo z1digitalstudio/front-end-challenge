@@ -11,6 +11,6 @@ export const SearchInput = styled(DefaultSearchInput)`
 `;
 
 export const ListSectionTitle = styled(DefaultText)`
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 `;

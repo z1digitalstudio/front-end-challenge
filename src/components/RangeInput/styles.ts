@@ -12,7 +12,6 @@ export const RangeInputStyle = styled.input<{ $value: number }>`
   border-radius: 4px;
   height: 4px;
   width: 100%;
-  outline: none;
   -webkit-appearance: none;
 
   &::-webkit-slider-thumb {

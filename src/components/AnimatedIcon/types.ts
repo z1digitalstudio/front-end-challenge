@@ -11,7 +11,6 @@ export interface IAnimationWrapper extends React.ComponentPropsWithRef<'div'> {
 export type TAnimatedIconProps = {
   size?: TIconSizes;
   isChecked: boolean;
-  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
 
 export interface IUseAnimationProps

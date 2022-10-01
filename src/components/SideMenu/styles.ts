@@ -1,12 +1,18 @@
+import { from } from '$/styles/utils/responsive';
 import styled from 'styled-components';
 
 import { StyledMenuItemLinkProps, StyledMenuItemProps } from './types';
 
 export const Container = styled.aside`
+  width: 100%;
   position: relative;
-  width: 15rem;
-  height: 100%;
   background-color: ${({ theme }) => theme.color.grayscale50};
+  display: flex;
+
+  ${from['tabletLandscape']} {
+    display: block;
+    width: 15rem;
+  }
 `;
 
 export const UserInfoContainer = styled.div`
@@ -15,7 +21,12 @@ export const UserInfoContainer = styled.div`
   padding: 1.5rem 0.75rem 1rem 1rem;
 `;
 
-export const UserInfo = styled.div``;
+export const UserInfo = styled.div`
+  display: none;
+  ${from['tabletLandscape']} {
+    display: block;
+  }
+`;
 
 export const MenuNav = styled.nav`
   padding: 0 0.75rem;
@@ -24,6 +35,12 @@ export const MenuNav = styled.nav`
 export const MenuList = styled.ul`
   list-style-type: none;
   padding-inline-start: 0;
+  flex-direction: row;
+  display: flex;
+
+  ${from['tabletLandscape']} {
+    display: block;
+  }
 `;
 
 export const MenuItemLink = styled.a<StyledMenuItemLinkProps>`

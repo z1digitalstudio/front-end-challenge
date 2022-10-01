@@ -12,7 +12,6 @@ const rendererSettings = {
 export const FavIcon: React.FunctionComponent<TAnimatedIconProps> = ({
   size,
   isChecked = false,
-  onClick = () => {},
   ...rest
 }) => {
   const initialized = useRef(false);
@@ -33,9 +32,5 @@ export const FavIcon: React.FunctionComponent<TAnimatedIconProps> = ({
     }
   }, [lottieAnimation, isChecked]);
 
-  const handleToggle = (e: React.MouseEvent<HTMLDivElement>) => {
-    onClick(e);
-  };
-
-  return <AnimationComponent {...rest} onClick={handleToggle} $size={size} />;
+  return <AnimationComponent {...rest} $size={size} />;
 };
