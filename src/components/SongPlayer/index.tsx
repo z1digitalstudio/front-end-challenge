@@ -5,7 +5,7 @@ import { Button } from '$/components/Button';
 import { RangeInput } from '$/components/RangeInput';
 import { SongCover } from '$/components/SongCover';
 import { Text } from '$/components/Text';
-import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
+import { useMusicStorage } from '$/contexts/MusicStorage/useMusicStorage';
 import { formatSecondsToMinSec } from '$/utils/timeParsers';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -27,11 +27,11 @@ function playOrStopAudio(audioRef: HTMLAudioElement, isPlaying: boolean): void {
   }
 }
 
-// TODO: extract null render and pass props from useMusicPlayer. Not use hook inside component
+// TODO: extract null render and pass props from useMusicStorage. Not use hook inside component
 // TODO: extract login in a hook
 
 export const SongPlayer = (): JSX.Element | null => {
-  const { isPlaying, selectedSong, setIsPlaying } = useMusicPlayer();
+  const { isPlaying, selectedSong, setIsPlaying } = useMusicStorage();
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const [currentTime, setCurrentTime] = useState<number>(0);

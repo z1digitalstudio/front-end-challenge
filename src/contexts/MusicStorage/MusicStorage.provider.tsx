@@ -1,17 +1,17 @@
 import { useState } from 'react';
 
-import { MusicPlayerContext } from './MusicPlayer.context';
-import type { TMusicPlayerProvider, TSelectedSong } from './types';
+import { MusicStorageContext } from './MusicStorage.context';
+import type { TMusicStorageProvider, TSelectedSong } from './types';
 
-export const MusicPlayerProvider: TMusicPlayerProvider = ({ children }) => {
+export const MusicStorageProvider: TMusicStorageProvider = ({ children }) => {
   const [selectedSong, setSelectedSong] = useState<TSelectedSong>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   return (
-    <MusicPlayerContext.Provider
+    <MusicStorageContext.Provider
       value={{ isPlaying, setIsPlaying, selectedSong, setSelectedSong }}
     >
       {children}
-    </MusicPlayerContext.Provider>
+    </MusicStorageContext.Provider>
   );
 };

@@ -1,12 +1,12 @@
 import type { Song } from '$/types';
 
-export type TMusicPlayerProvider = React.FunctionComponent<{
+export type TMusicStorageProvider = React.FunctionComponent<{
   children: React.ReactNode;
 }>;
 
 export type TSelectedSong = Song | null;
 
-export type IMusicPlayerContext = {
+export type IMusicStorageContext = {
   selectedSong: TSelectedSong;
   setSelectedSong: (selectedSong: TSelectedSong) => void;
   isPlaying: boolean;

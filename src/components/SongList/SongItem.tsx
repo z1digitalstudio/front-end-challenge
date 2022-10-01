@@ -3,7 +3,7 @@ import { Button } from '$/components/Button';
 import { Pill } from '$/components/Pills';
 import { Text } from '$/components/Text';
 import { useFavSongs } from '$/contexts/FavSongs/useFavSongs';
-import { useMusicPlayer } from '$/contexts/MusicPlayer/useMusicPlayer';
+import { useMusicStorage } from '$/contexts/MusicStorage/useMusicStorage';
 import type { Song } from '$/types';
 import { formatSecondsToMinSec } from '$/utils/timeParsers';
 import { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ export function SongItem(song: Song) {
   const [duration, setDuration] = useState<number>(0);
   const { isFav, toggleFav } = useFavSongs();
   const { isPlaying, selectedSong, setSelectedSong, setIsPlaying } =
-    useMusicPlayer();
+    useMusicStorage();
 
   const {
     id,
