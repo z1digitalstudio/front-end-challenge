@@ -16,6 +16,7 @@ type Data = {
 
 function HomeView(): JSX.Element {
   const [search, setSearch] = useState<string>('');
+
   const { loading, error, data } = useQuery<Data, Query>(GET_SONGS, {
     variables: { search },
   });
