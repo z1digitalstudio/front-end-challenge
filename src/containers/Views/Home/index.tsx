@@ -1,28 +1,16 @@
 import { SongList } from '$/components/SongList';
 import { Text } from '$/components/Text';
-import { GET_SONGS } from '$/queries';
-import { Song } from '$/types';
-import { useQuery } from '@apollo/client';
+import { useMusicStorage } from '$/contexts/MusicStorage/useMusicStorage';
 import { useState } from 'react';
 
 import { Container, ListSectionTitle, SearchInput } from './styles';
 
-type Query = {
-  search?: string;
-};
-type Data = {
-  songs: { songs: Song[] };
-};
-
 function HomeView(): JSX.Element {
-  const [search, setSearch] = useState<string>('');
-
-  const { loading, error, data } = useQuery<Data, Query>(GET_SONGS, {
-    variables: { search },
-  });
+  const { loading, error, storedSongs, searchValue, handleSearch } =
+    useMusicStorage();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    handleSearch(e.target.value);
   };
 
   return (
@@ -31,14 +19,14 @@ function HomeView(): JSX.Element {
         Explore
       </Text>
       <SearchInput
-        value={search}
+        value={searchValue}
         placeholder="Search by title, genre..."
         onChange={handleChange}
       />
       <ListSectionTitle tag="h2" variant="title2">
         Featured songs
       </ListSectionTitle>
-      <SongList error={error} loading={loading} songs={data?.songs.songs} />
+      <SongList error={error} loading={loading} songs={storedSongs} />
     </Container>
   );
 }

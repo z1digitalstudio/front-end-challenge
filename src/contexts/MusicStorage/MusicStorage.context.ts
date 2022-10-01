@@ -7,6 +7,10 @@ const INITIAL_CONTEXT: IMusicStorageContext = {
   setSelectedSong: () => {},
   isPlaying: false,
   setIsPlaying: () => {},
+  storedSongs: [],
+  setStoredSongs: () => {},
+  handleSearch: () => {},
+  searchValue: '',
 };
 
 export const MusicStorageContext = createContext<IMusicStorageContext>({
