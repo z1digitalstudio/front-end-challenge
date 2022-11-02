@@ -1,3 +1,8 @@
 export type SongElementProps = {
-  image: string;
+  songImageUrl: string;
+  songTitle: string;
+  songAuthor: string;
+  songDescription: string;
+  songGenre: string;
+  songUrl: string;
 };
