@@ -1,5 +1,10 @@
 export type SongsRequest = {
-  data: unknown;
+  data?: {
+    songs: {
+      songs: [];
+    };
+    __typename: string;
+  };
   loading?: unknown;
   error?: unknown;
 };

@@ -10,7 +10,11 @@ export const SearchInput = styled(DefaultSearchInput)`
 `;
 export const SongsWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
   width: 100%;
-  height: 40vh;
-  background-color: red;
+  height: 100%;
+  margin-top: 40px;
 `;
