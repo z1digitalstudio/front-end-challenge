@@ -10,6 +10,8 @@ const theme = {
     grayscale200: '#C9CDDB',
     grayscale100: '#E0DDE4',
     grayscale50: '#F7F6F8',
+    favoriteIconLiked: '#BF508B',
+    favoriteIconEmpty: '#B2B6CA',
   },
   weight: {
     bold: 700,
