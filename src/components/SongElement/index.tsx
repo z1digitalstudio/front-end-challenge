@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { Favorite } from '$/components/Favorite/Favorite';
 import Image from 'next/image';
 import React, { useMemo } from 'react';
 import { AiFillPlayCircle } from 'react-icons/ai';
@@ -27,7 +28,7 @@ const SongElement = ({
   songDescription,
   songGenre,
 }: SongElementProps) => {
-  const SongGenreFormatted = useMemo(() => {
+  const songGenreFormatted = useMemo(() => {
     const stringHasCharacter = songGenre.indexOf('_') !== -1;
     const stringformatted = stringHasCharacter
       ? songGenre.replace(/_/g, ' ')
@@ -61,11 +62,13 @@ const SongElement = ({
           <SongDuration>5 min</SongDuration>
 
           <SongGenreWrapper>
-            <SongGenre>{SongGenreFormatted}</SongGenre>
+            <SongGenre>{songGenreFormatted}</SongGenre>
           </SongGenreWrapper>
         </SongInfoFooter>
       </SongInfo>
-      <SongLikeContainer>{'<3'}</SongLikeContainer>
+      <SongLikeContainer>
+        <Favorite />
+      </SongLikeContainer>
     </Container>
   );
 };
