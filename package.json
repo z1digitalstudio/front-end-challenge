@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "$": "link:./src",
+    "husky": "^8.0.2",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -21,6 +22,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",

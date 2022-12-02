@@ -50,6 +50,16 @@ As a deployment method, I have choosen `Vercel` instead of `Github pages` or ano
 
 <br>
 
+**Config commit linter ⬆️**
+
+Getting a clean code is the goal of every developer, but it is so important, as well, to have a clean git log. Commits rules help to improve teamwork and make sense as a unit to your commit messages. So, I have decided to use `CommitLint` and `Husky` to linting my commits. 
+
+[`Conventional commits`](https://www.conventionalcommits.org/en/v1.0.0/) help us to follow certain rules in your commits. If we try to make a commit that does not follow the convention we have chosen, it will fail. Meanwhile, [`Husky`](https://typicode.github.io/husky/#/) is a git hooks to execute rules when we add a commit message. 
+
+> Source: [Medium](https://medium.com/dottech/mejorando-los-mensajes-de-git-commit-con-husky-y-commitlint-7bddf6ab22c2)
+
+<br>
+
 ## Requisites 👌
 
 - User should be able to:
