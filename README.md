@@ -60,7 +60,15 @@ Getting a clean code is the goal of every developer, but it is so important, as 
 
 <br>
 
-## Requisites 👌
+**CI with Github Actions 🚀**
+
+For me it is really significant to have a clean code and a working application without any bugs or error/warning messages. In addition to using git hooks before each commit, I find it very necessary to check the code on each PR automatically. With this objective, `Continuous Integration` with [`Github Actions`](https://github.com/features/actions) allows me to meet minimum quality standard. For example, run test or linter before merging each branch.
+
+> Source: [Github Docs](https://docs.github.com/en/actions/using-workflows/about-workflows)
+
+<br>
+
+## ▶️ Requisites
 
 - User should be able to:
   - see list of songs
