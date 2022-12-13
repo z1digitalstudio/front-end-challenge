@@ -1,8 +1,5 @@
 import { Text } from '$/components/Text';
-import {
-  SongListDocument,
-  useSongListQuery,
-} from '$/graphql/generated/QueryTypeDefs';
+import { useSongListQuery } from '$/graphql/generated/QueryTypeDefs';
 
 import { Container, SearchInput } from './styles';
 
@@ -29,9 +26,9 @@ function HomeView(): JSX.Element {
       <SearchInput placeholder="Search by title, genre..." />
       <h2>Song Data</h2>
       <ul>
-        {data.songs.songs.map((song) => {
-          return <li key={song.id}>{song.name}</li>;
-        })}
+        {data.songs.songs.map((song) => (
+          <li key={song.id}>{song.name}</li>
+        ))}
       </ul>
     </Container>
   );
