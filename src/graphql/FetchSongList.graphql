@@ -1,0 +1,17 @@
+query FetchSongList {
+  songs {
+    songs {
+      id
+      name
+      image
+      genre
+      description
+      audio {
+        url
+      }
+      author {
+        name
+      }
+    }
+  }
+}
