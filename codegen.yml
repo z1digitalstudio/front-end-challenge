@@ -1,0 +1,10 @@
+overwrite: true
+schema: "https://api-frontend-challenge.herokuapp.com/graphql"
+documents: "./src/**/*.graphql"
+generates:
+  src/graphql/generated/QueryTypeDefs.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations":
+          preResolveTypes: false
+      - "typescript-react-apollo"

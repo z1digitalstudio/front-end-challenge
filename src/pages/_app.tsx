@@ -1,6 +1,6 @@
 import '$/styles/fonts.css';
 import { Layout } from '$/containers/Layouts';
-import client from '$/graphql/lib/ApolloClient';
+import client from '$/lib/ApolloClient';
 import GlobalStyle from '$/styles/global';
 import theme from '$/styles/themes';
 import { ApolloProvider } from '@apollo/client';
